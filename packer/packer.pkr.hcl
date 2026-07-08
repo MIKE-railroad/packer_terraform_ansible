@@ -25,12 +25,12 @@ variable "vm_name" {
 
 variable "iso_path" {
   type    = string
-  default = "C:/ISO/Rocky-10-x86_64-minimal.iso"
+  default = "C:/MyLab/ISO/Rocky-10.1-x86_64-minimal.iso"
 }
 
 variable "switch_name" {
   type    = string
-  default = "External"
+  default = "MyLab_Networking"
 }
 
 variable "ssh_username" {
@@ -75,7 +75,7 @@ source "hyperv-iso" "rocky10" {
 
   iso_checksum = "none"
 
-  http_directory = "./http"
+  http_directory = "C:/MyLab/packer_terraform_ansible/packer/http/"
 
   shutdown_command = "echo '${var.ssh_password}' | sudo -S shutdown -P now"
 
